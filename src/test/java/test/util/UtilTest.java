@@ -39,7 +39,7 @@ public class UtilTest {
         Assert.assertFalse(useful(list2));
         Assert.assertFalse(useful(list3));
 
-        Map map = new HashMap();
+        Map<String, String> map = new HashMap<>();
         map.put("123", "456");
         Map map2 = null;
         Map map3 = new HashMap();
