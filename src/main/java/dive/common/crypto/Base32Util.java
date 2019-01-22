@@ -38,6 +38,10 @@ public class Base32Util {
      */
     public static String base32Encode(byte[] plain, char[] charset) {
         Objects.requireNonNull(plain, "plain");
+        Objects.requireNonNull(charset, "charset");
+        if (32 != charset.length) {
+            throw new RuntimeException("the length of charset must be 32: " + charset.length);
+        }
 
         StringBuilder sb = new StringBuilder(plain.length * 8 + 4);
         for (byte b : plain) {
@@ -69,6 +73,10 @@ public class Base32Util {
      */
     public static byte[] base32Decode(String cipher, char[] charset) {
         Objects.requireNonNull(cipher, "cipher");
+        Objects.requireNonNull(charset, "charset");
+        if (32 != charset.length) {
+            throw new RuntimeException("the length of charset must be 32: " + charset.length);
+        }
 
         while (cipher.endsWith("=")) {
             cipher = cipher.substring(0, cipher.length() - 1);
