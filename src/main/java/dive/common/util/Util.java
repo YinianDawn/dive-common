@@ -31,12 +31,12 @@ public class Util {
         return null != check;
     }
 
-    public static boolean exist(Object check, Object check2) {
-        return exist(check) && exist(check2);
+    public static boolean exist(Object check1, Object check2) {
+        return exist(check1) && exist(check2);
     }
 
-    public static boolean exist(Object check, Object check2, Object check3) {
-        return exist(check) && exist(check2) && exist(check3);
+    public static boolean exist(Object check1, Object check2, Object check3) {
+        return exist(check1) && exist(check2) && exist(check3);
     }
 
     public static boolean exist(Object check, Object... checks) {
@@ -81,12 +81,12 @@ public class Util {
         return null != check && !check.isEmpty();
     }
 
-    public static boolean useful(String check, String check2) {
-        return useful(check) && useful(check2);
+    public static boolean useful(String check1, String check2) {
+        return useful(check1) && useful(check2);
     }
 
-    public static boolean useful(String check, String check2, String check3) {
-        return useful(check) && useful(check2) && useful(check3);
+    public static boolean useful(String check1, String check2, String check3) {
+        return useful(check1) && useful(check2) && useful(check3);
     }
 
     public static boolean useful(String check, String... checks) {
