@@ -9,7 +9,7 @@ import java.math.RoundingMode;
 import static dive.common.math.BigDecimalUtil.*;
 
 /**
- * RandomUtil测试
+ * BigDecimalUtil测试
  *
  * @author dawn
  * @date 2019/1/19 23:03
