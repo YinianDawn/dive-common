@@ -11,6 +11,7 @@ import java.util.Objects;
 import static dive.common.crypto.Base64Util.base64DecodeByString;
 import static dive.common.crypto.Base64Util.base64EncodeToString;
 import static dive.common.crypto.Util.key;
+import static dive.common.crypto.Util.keyToBase64;
 
 /**
  * DH秘钥交换算法
@@ -25,7 +26,7 @@ public class DHUtil {
     }
 
     public static String[] dhKeyToBase64() {
-        return key(dhKey());
+        return keyToBase64(dhKey());
     }
 
     public static DHPublicKey dhPublicByBase64(String dhPublicBase64) throws Exception {

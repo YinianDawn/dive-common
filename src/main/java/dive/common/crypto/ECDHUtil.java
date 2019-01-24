@@ -11,6 +11,7 @@ import java.util.Objects;
 import static dive.common.crypto.Base64Util.base64DecodeByString;
 import static dive.common.crypto.Base64Util.base64EncodeToString;
 import static dive.common.crypto.Util.key;
+import static dive.common.crypto.Util.keyToBase64;
 
 /**
  * ECDH秘钥交换算法
@@ -25,7 +26,7 @@ public class ECDHUtil {
     }
 
     public static String[] ecKeyToBase64() {
-        return key(ecKey());
+        return keyToBase64(ecKey());
     }
 
     public static ECPublicKey ecPublicByBase64(String ecPublicBase64) throws Exception {
