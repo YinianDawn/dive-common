@@ -66,11 +66,11 @@ public class DESUtil {
         return crypt(cipher, key, iv, padding, Cipher.DECRYPT_MODE);
     }
 
-    public static String desEncrypt(String plain, String key) {
+    public static String desEncryptToBase64(String plain, String keyBase64) {
         Objects.requireNonNull(plain, "plain");
-        Objects.requireNonNull(key, "key");
+        Objects.requireNonNull(keyBase64, "keyBase64");
         try {
-            byte[] bytes = desEncrypt(plain.getBytes(), base64DecodeByString(key), IV, PADDING);
+            byte[] bytes = desEncrypt(plain.getBytes(), base64DecodeByString(keyBase64), IV, PADDING);
             return base64EncodeToString(bytes);
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
@@ -78,11 +78,11 @@ public class DESUtil {
         return null;
     }
 
-    public static String desDecrypt(String cipher, String key) {
-        Objects.requireNonNull(cipher, "cipher");
-        Objects.requireNonNull(key, "key");
+    public static String desDecryptByBase64(String cipherBase64, String keyBase64) {
+        Objects.requireNonNull(cipherBase64, "cipherBase64");
+        Objects.requireNonNull(keyBase64, "keyBase64");
         try {
-            byte[] bytes = desDecrypt(base64DecodeByString(cipher), base64DecodeByString(key), IV, PADDING);
+            byte[] bytes = desDecrypt(base64DecodeByString(cipherBase64), base64DecodeByString(keyBase64), IV, PADDING);
             return new String(bytes);
         } catch (GeneralSecurityException e) {
             e.printStackTrace();

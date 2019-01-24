@@ -28,12 +28,12 @@ public class DESUtilTest {
         System.out.println("plain:");
         System.out.println(plain);
 
-        String cipher = desEncrypt(plain, key);
+        String cipher = desEncryptToBase64(plain, key);
         System.out.println("cipher:");
         System.out.println(cipher);
         Assert.assertEquals("amCujZxo6Ig=", cipher);
 
-        String plain2 = desDecrypt(cipher, key);
+        String plain2 = desDecryptByBase64(cipher, key);
         System.out.println("plain2:");
         System.out.println(plain2);
         Assert.assertEquals(plain, plain2);
