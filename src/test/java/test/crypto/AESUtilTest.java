@@ -28,12 +28,12 @@ public class AESUtilTest {
         System.out.println("plain:");
         System.out.println(plain);
 
-        String cipher = aesEncrypt(plain, key);
+        String cipher = aesEncryptToBase64(plain, key);
         System.out.println("cipher:");
         System.out.println(cipher);
         Assert.assertEquals("Lak2LtylufEUjD76s5P1Dg==", cipher);
 
-        String plain2 = aesDecrypt(cipher, key);
+        String plain2 = aesDecryptByBase64(cipher, key);
         System.out.println("plain2:");
         System.out.println(plain2);
         Assert.assertEquals(plain, plain2);

@@ -57,11 +57,11 @@ public class AESUtil {
         return crypt(cipher, key, iv, padding, Cipher.DECRYPT_MODE);
     }
 
-    public static String aesEncrypt(String plain, String key) {
+    public static String aesEncryptToBase64(String plain, String keyBase64) {
         Objects.requireNonNull(plain, "plain");
-        Objects.requireNonNull(key, "key");
+        Objects.requireNonNull(keyBase64, "keyBase64");
         try {
-            byte[] bytes = aesEncrypt(plain.getBytes(), base64DecodeByString(key), IV, PADDING);
+            byte[] bytes = aesEncrypt(plain.getBytes(), base64DecodeByString(keyBase64), IV, PADDING);
             return base64EncodeToString(bytes);
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
@@ -69,11 +69,11 @@ public class AESUtil {
         return null;
     }
 
-    public static String aesDecrypt(String cipher, String key) {
-        Objects.requireNonNull(cipher, "cipher");
-        Objects.requireNonNull(key, "key");
+    public static String aesDecryptByBase64(String cipherBase64, String keyBase64) {
+        Objects.requireNonNull(cipherBase64, "cipherBase64");
+        Objects.requireNonNull(keyBase64, "keyBase64");
         try {
-            byte[] bytes = aesDecrypt(base64DecodeByString(cipher), base64DecodeByString(key), IV, PADDING);
+            byte[] bytes = aesDecrypt(base64DecodeByString(cipherBase64), base64DecodeByString(keyBase64), IV, PADDING);
             return new String(bytes);
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
