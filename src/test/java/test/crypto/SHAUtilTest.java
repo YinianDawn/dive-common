@@ -8,7 +8,6 @@ import org.junit.Test;
  * SHAUtil测试
  *
  * @author dawn
- * @date 2019/1/19 22:57
  */
 public class SHAUtilTest {
 

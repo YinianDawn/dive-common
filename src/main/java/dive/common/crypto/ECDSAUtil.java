@@ -16,7 +16,6 @@ import static dive.common.crypto.Util.*;
  * ECDSA签名算法
  *
  * @author dawn
- * @date 2019/1/19 23:00
  */
 public class ECDSAUtil {
 

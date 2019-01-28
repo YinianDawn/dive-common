@@ -17,7 +17,6 @@ import static dive.common.crypto.Util.keyToBase64;
  * ECDH秘钥交换算法
  *
  * @author dawn
- * @date 2019/1/19 23:00
  */
 public class ECDHUtil {
 

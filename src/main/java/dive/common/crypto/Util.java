@@ -16,7 +16,6 @@ import static dive.common.crypto.Base64Util.base64EncodeToString;
  * 统一方法
  *
  * @author dawn
- * @date 2019/1/19 23:00
  */
 class Util {
 

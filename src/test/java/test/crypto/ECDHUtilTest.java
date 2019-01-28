@@ -10,7 +10,6 @@ import static dive.common.crypto.ECDHUtil.ecKeyToBase64;
  * ECDHUtil测试
  *
  * @author dawn
- * @date 2019/1/19 22:57
  */
 public class ECDHUtilTest {
     @Test

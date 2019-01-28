@@ -4,7 +4,6 @@ package dive.common.model;
  * 传输字符串模式，反解析使用
  *
  * @author dawn
- * @date 2019/1/20 1:11
  */
 public class StringMessage {
     /**

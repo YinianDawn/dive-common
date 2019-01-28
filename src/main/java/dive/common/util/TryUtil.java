@@ -6,7 +6,6 @@ import java.util.function.*;
  * 重试
  *
  * @author dawn
- * @date 2019/1/22 0:57
  */
 public class TryUtil {
 

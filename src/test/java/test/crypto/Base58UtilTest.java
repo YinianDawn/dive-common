@@ -10,7 +10,6 @@ import static dive.common.crypto.Base58Util.base58EncodeByBitcoin;
  * Base58Util测试
  *
  * @author dawn
- * @date 2019/1/19 22:57
  */
 public class Base58UtilTest {
     @Test

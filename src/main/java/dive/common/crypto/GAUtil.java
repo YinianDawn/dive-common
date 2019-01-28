@@ -10,6 +10,7 @@ import java.security.SecureRandom;
 
 /**
  * 谷歌验证器验证
+ * @author dawn
  */
 public class GAUtil {
 

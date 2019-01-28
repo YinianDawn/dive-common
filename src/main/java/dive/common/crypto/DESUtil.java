@@ -15,7 +15,6 @@ import static dive.common.crypto.Base64Util.base64EncodeToString;
  * DES加密工具
  *
  * @author dawn
- * @date 2019/1/19 23:00
  */
 public class DESUtil {
 

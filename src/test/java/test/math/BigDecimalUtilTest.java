@@ -12,7 +12,6 @@ import static dive.common.math.BigDecimalUtil.*;
  * BigDecimalUtil测试
  *
  * @author dawn
- * @date 2019/1/19 23:03
  */
 public class BigDecimalUtilTest {
 

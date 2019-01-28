@@ -6,7 +6,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * 随机工具
  *
  * @author dawn
- * @date 2019/1/19 23:00
  */
 public class RandomUtil {
 
@@ -30,9 +29,11 @@ public class RandomUtil {
 
 
     /**
-     * 0            bound = 0
-     * [0, bound)   bound > 0
-     * (bound, 0]   bound < 0
+     * 0            bound 等于 0
+     * [0, bound)   bound 大于 0
+     * (bound, 0]   bound 小于 0
+     * @param bound 终点 （不包含）
+     * @return 随机数
      */
     public static int random(int bound) {
         if (bound == 0) {
@@ -45,9 +46,12 @@ public class RandomUtil {
     }
 
     /**
-     * origin            bound = origin
-     * [origin, bound)   bound > origin
-     * (bound, origin]   bound < origin
+     * origin            bound 等于 origin
+     * [origin, bound)   bound 大于 origin
+     * (bound, origin]   bound 小于 origin
+     * @param origin 起点（包含）
+     * @param bound 终点 （不包含）
+     * @return 随机数
      */
     public static int random(int origin, int bound) {
         if (origin == bound) {
@@ -60,9 +64,12 @@ public class RandomUtil {
     }
 
     /**
-     * origin                   range = 0
-     * [origin, origin + range) range > origin
-     * (origin - range, origin] range < origin
+     * origin                   range 等于 0
+     * [origin, origin + range) range 大于 origin
+     * (origin - range, origin] range 小于 origin
+     * @param origin 起点（包含）
+     * @param range 范围 （不包含）
+     * @return 随机数
      */
     public static int randomRange(int origin, int range) {
         if (0 == range) {
@@ -77,9 +84,11 @@ public class RandomUtil {
 
 
     /**
-     * 0            bound = 0
-     * [0, bound)   bound > 0
-     * (bound, 0]   bound < 0
+     * 0            bound 等于 0
+     * [0, bound)   bound 大于 0
+     * (bound, 0]   bound 小于 0
+     * @param bound 终点 （不包含）
+     * @return 随机数
      */
     public static long random(long bound) {
         if (bound == 0) {
@@ -92,9 +101,12 @@ public class RandomUtil {
     }
 
     /**
-     * origin            bound = origin
-     * [origin, bound)   bound > origin
-     * (bound, origin]   bound < origin
+     * origin            bound 等于 origin
+     * [origin, bound)   bound 大于 origin
+     * (bound, origin]   bound 小于 origin
+     * @param origin 起点（包含）
+     * @param bound 终点 （不包含）
+     * @return 随机数
      */
     public static long random(long origin, long bound) {
         if (origin == bound) {
@@ -107,9 +119,12 @@ public class RandomUtil {
     }
 
     /**
-     * origin                   range = 0
-     * [origin, origin + range) range > origin
-     * (origin - range, origin] range < origin
+     * origin                   range 等于 0
+     * [origin, origin + range) range 大于 origin
+     * (origin - range, origin] range 小于 origin
+     * @param origin 起点（包含）
+     * @param range 范围 （不包含）
+     * @return 随机数
      */
     public static long randomRange(long origin, long range) {
         if (range == 0) {
@@ -123,9 +138,11 @@ public class RandomUtil {
 
 
     /**
-     * 0            bound = 0
-     * [0, bound)   bound > 0
-     * (bound, 0]   bound < 0
+     * 0            bound 等于 0
+     * [0, bound)   bound 大于 0
+     * (bound, 0]   bound 小于 0
+     * @param bound 终点 （不包含）
+     * @return 随机数
      */
     public static double random(double bound) {
         if (0 < bound) {
@@ -138,9 +155,12 @@ public class RandomUtil {
     }
 
     /**
-     * origin            bound = origin
-     * [origin, bound)   bound > origin
-     * (bound, origin]   bound < origin
+     * origin            bound 等于 origin
+     * [origin, bound)   bound 大于 origin
+     * (bound, origin]   bound 小于 origin
+     * @param origin 起点（包含）
+     * @param bound 终点 （不包含）
+     * @return 随机数
      */
     public static double random(double origin, double bound) {
         if (origin < bound) {
@@ -153,9 +173,12 @@ public class RandomUtil {
     }
 
     /**
-     * origin                   range = 0
-     * [origin, origin + range) range > origin
-     * (origin - range, origin] range < origin
+     * origin                   range 等于 0
+     * [origin, origin + range) range 大于 origin
+     * (origin - range, origin] range 小于 origin
+     * @param origin 起点（包含）
+     * @param range 范围（不包含）
+     * @return 随机数
      */
     public static double randomRange(double origin, double range) {
         if (0 < range) {
@@ -173,6 +196,12 @@ public class RandomUtil {
      */
     private static final String CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+    /**
+     * 随机token
+     * @param length 长度
+     * @param charset 字符集
+     * @return token
+     */
     public static String token(int length, String charset) {
         int size = charset.length();
         StringBuilder sb = new StringBuilder();

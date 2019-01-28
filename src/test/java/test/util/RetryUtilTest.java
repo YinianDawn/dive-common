@@ -9,7 +9,6 @@ import static dive.common.util.TryUtil.retry;
  * RetryUtil测试
  *
  * @author dawn
- * @date 2019/1/22 0:57
  */
 public class RetryUtilTest {
     private int times = 0;

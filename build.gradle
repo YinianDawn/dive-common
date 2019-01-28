@@ -1,7 +1,7 @@
 
 repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter/' }
     maven { url 'https://maven.yinian.tech/public/' }
     mavenCentral()
 }
@@ -29,24 +29,63 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+group = 'dive'
+version = '0.0.1'
+
 jar {
     enabled = true
-    version = '0.0.1'
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    classifier = 'javadoc'
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'dive'
-            artifactId 'common'
-            version = '0.0.1'
+            artifactId = 'common'
             from components.java
             artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = 'common tools'
+                description = 'common tools'
+                url = 'https://maven.yinian.tech/public'
+                licenses {
+                    license {
+                        name = 'GNU GENERAL PUBLIC LICENSE, Version 3'
+                        url = 'https://www.gnu.org/licenses/gpl-3.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dawn'
+                        name = 'dawn'
+                        email = 'dawn@yinian.tech'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/YinianDawn/dive-common.git'
+                    url = 'https://github.com/YinianDawn/dive-common'
+                }
+            }
         }
     }
     repositories {
         maven {
             url = "$buildDir/repo"
         }
+    }
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
     }
 }

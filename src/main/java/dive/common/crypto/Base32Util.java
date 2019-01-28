@@ -6,7 +6,6 @@ import java.util.Objects;
  * Base32编码工具
  *
  * @author dawn
- * @date 2019/1/19 23:00
  */
 public class Base32Util {
 

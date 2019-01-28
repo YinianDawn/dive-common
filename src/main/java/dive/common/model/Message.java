@@ -8,7 +8,6 @@ import java.util.Objects;
  * 信息模板
  *
  * @author dawn
- * @date 2019/1/19 22:53
  * @param <M> 传输的对象
  */
 public class Message<M> {
