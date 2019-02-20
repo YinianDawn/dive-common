@@ -80,7 +80,7 @@ public class TryUtil {
             // infinite
             while (null == r) {
                 r = function.apply(t);
-                if (null != r && null != consumer) {
+                if (null == r && null != consumer) {
                     consumer.accept(t);
                 }
             }
@@ -88,7 +88,7 @@ public class TryUtil {
             // times
             while (times-- > -1 && null == r) {
                 r = function.apply(t);
-                if (null != r && null != consumer) {
+                if (null == r && null != consumer) {
                     consumer.accept(t);
                 }
             }
@@ -130,7 +130,7 @@ public class TryUtil {
             // infinite
             while (null == r) {
                 r = biFunction.apply(t, u);
-                if (null != r && null != biConsumer) {
+                if (null == r && null != biConsumer) {
                     biConsumer.accept(t, u);
                 }
             }
@@ -138,7 +138,7 @@ public class TryUtil {
             // times
             while (times-- > -1 && null == r) {
                 r = biFunction.apply(t, u);
-                if (null != r && null != biConsumer) {
+                if (null == r && null != biConsumer) {
                     biConsumer.accept(t, u);
                 }
             }
