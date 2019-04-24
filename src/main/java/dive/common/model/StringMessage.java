@@ -1,5 +1,7 @@
 package dive.common.model;
 
+import static dive.common.model.Message.CODE_SUCCESS;
+
 /**
  * 传输字符串模式，反解析使用
  *
@@ -59,6 +61,12 @@ public class StringMessage {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    //---------------------------------------------------------------------
+
+    public boolean fine() {
+        return CODE_SUCCESS == this.code;
     }
 
     //---------------------------------------------------------------------
