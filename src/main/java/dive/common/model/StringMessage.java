@@ -1,5 +1,6 @@
 package dive.common.model;
 
+import static dive.common.model.Message.CODE_FAILED;
 import static dive.common.model.Message.CODE_SUCCESS;
 
 /**
@@ -16,7 +17,7 @@ public class StringMessage {
     /**
      * 信息码
      */
-    private int code;
+    private int code = CODE_FAILED;
 
     /**
      * 描述

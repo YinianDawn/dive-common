@@ -33,7 +33,7 @@ public class Message<M> {
     /**
      * 信息码
      */
-    private int code;
+    private int code = CODE_FAILED;
 
     /**
      * 描述
