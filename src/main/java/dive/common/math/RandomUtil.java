@@ -206,7 +206,7 @@ public class RandomUtil {
         int size = charset.length();
         StringBuilder sb = new StringBuilder();
         while (length-- > 0) {
-            sb.append(CHARS.charAt(random(0, size)));
+            sb.append(charset.charAt(random(0, size)));
         }
         return sb.toString();
     }
